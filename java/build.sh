@@ -3,19 +3,18 @@
 VERSAO="0.1"
 DHUSER="helomach"
 
-## Download da imagem python
-docker pull python
+## Download da imagem java
+docker pull openjdk:22-bullseye
 
-## Cria a imagem base
-docker build -t ${DHUSER}/st:base -f Dockerfile_base .
-
-## Cria a imagem com a aplicação
-docker build --no-cache -t ${DHUSER}/st:${VERSAO} .
+## Cria a imagem
+docker build -t ${DHUSER}/openjdk:${VERSAO} .
 
 ## Define a nova imagem como latest
-docker tag ${DHUSER}/st:${VERSAO} ${DHUSER}/st
+docker tag ${DHUSER}/openjdk:${VERSAO} ${DHUSER}/openjdk
 
-# Push das imagens para o dockerhub
-docker push ${DHUSER}/st:base
-docker push ${DHUSER}/st:${VERSAO}
-docker push ${DHUSER}/st
+
+#Push das imagens para o Docker Hub
+docker login
+docker push ${DHUSER}/openjdk:${VERSAO}
+docker push ${DHUSER}/openjdk
+#docker logout
