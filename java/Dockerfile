@@ -1,6 +1,3 @@
-FROM helomach/st:base
+FROM openjdk:22-bullseye
 
-RUN git clone https://github.com/helomach/aula-darlon.git
-WORKDIR /aula-darlon/
-
-CMD ["streamlit", "run", "hello.py"]
+RUN apt update && apt -y install git
