@@ -1,2 +1,2 @@
-docker build -t pedrotonin/docusaurus:1.0 .
-docker run -p 3000:3000 pedrotonin/docusaurus:1.0
+docker build -t helomach/docusaurus:1.0 .
+docker run -p 3000:3000 helomach/docusaurus:1.0
