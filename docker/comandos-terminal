@@ -1,0 +1,2 @@
+docker build -t pedrotonin/docusaurus:1.0 .
+docker run -p 3000:3000 pedrotonin/docusaurus:1.0
